@@ -10,7 +10,7 @@ class TestRoom(unittest.TestCase):
         self.room_1.tab = 0
         self.guest_1 = Guest("Jack Shepherd", 100, "Come On Everybody")
         self.guest_2 = Guest("Kate Austen", 50, "Stayin Alive")
-        self.guest_3 = Guest()
+        self.guest_3 = Guest("James Sawyer Ford", 70, "Sweet Home Alabama")
         self.room_1.guest_list = []
         self.song_1 = Song("Driveshaft", "You All Everybody")
         self.song_2 = Song("BeeGees", "Stayin Alive")
@@ -42,5 +42,15 @@ class TestRoom(unittest.TestCase):
     def test_check_song_list(self):
         length = len(self.room_1.song_list)
         self.assertEqual(0, length)
+
+    def test_check_guest_list(self):
+        length = len(self.room_1.guest_list)
+        self.assertEqual(1, length)
+    
+    def test_pay_entrance_fee(self):
+        entrance_fee = 5
+        paid_fee = self.guest_1 - entrance_fee
+        self.assertEqual(95, paid_fee)
+
 
 

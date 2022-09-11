@@ -29,3 +29,15 @@ class Room:
     def remove_song_from_list(self, song):
         self.guest_list.remove(song)
 
+    def check_room_capacity_and_add_guest(self, guest):
+        if self.room_1.capacity > 0:
+            self.room_1.guest_list.append(guest)
+
+    def pay_entrance_fee(self, entrance_fee):
+        self.guest -= entrance_fees
+
+
+
+    
+
+
